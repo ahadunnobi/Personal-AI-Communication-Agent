@@ -1,0 +1,52 @@
+# Dependencies
+node_modules/
+dist/
+.next/
+out/
+build/
+
+# Environment Variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env*
+
+# Next.js
+.next/
+out/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Python/Backend
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+*.log
+db.sqlite3
+.python-version
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Docker
+# Keep docker files, but ignore data and logs
+*/data/
+*.log
+
+# System
+.DS_Store
+Thumbs.db
