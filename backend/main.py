@@ -19,6 +19,7 @@ app.include_router(webhook.router, prefix="/webhook", tags=["Webhooks"])
 app.include_router(messages.router, prefix="/api/messages", tags=["Messages"])
 app.include_router(replies.router, prefix="/api/replies", tags=["Replies"])
 app.include_router(personality.router, prefix="/api/personality", tags=["Personality"])
+app.include_router(connections.router, prefix="/api/connections", tags=["Connections"])
 
 @app.get("/")
 async def root():
