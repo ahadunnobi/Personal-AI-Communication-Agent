@@ -25,6 +25,25 @@ class ReplyStatus(str, enum.Enum):
     rejected = "rejected"
     sent = "sent"
 
+class PlatformType(str, enum.Enum):
+    whatsapp = "whatsapp"
+    telegram = "telegram"
+    instagram = "instagram"
+    email = "email"
+
+class PlatformConnection(Base):
+    __tablename__ = "platform_connections"
+
+    id = Column(Integer, primary_key=True, index=True)
+    user_id = Column(Integer, ForeignKey("users.id"))
+    platform = Column(Enum(PlatformType), nullable=False)
+    credentials = Column(JSON, nullable=False) # Store encrypted tokens/keys
+    is_active = Column(Boolean, default=True)
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
+
+    user = relationship("User", back_populates="platform_connections")
+
 class User(Base):
     __tablename__ = "users"
 
@@ -37,6 +56,7 @@ class User(Base):
 
     contacts = relationship("Contact", back_populates="user")
     personality_profiles = relationship("PersonalityProfile", back_populates="user")
+    platform_connections = relationship("PlatformConnection", back_populates="user")
 
 class Contact(Base):
     __tablename__ = "contacts"

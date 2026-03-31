@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from .config import settings
-from .routers import webhook, messages, replies, personality
+from .routers import webhook, messages, replies, personality, connections
 
 app = FastAPI(title="Personal AI Communication Agent API")
 
