@@ -7,7 +7,3 @@
 
   # The publish directory must be explicitly set to .next
   publish = ".next"
-
-[[plugins]]
-  # Essential plugin for Next.js on Netlify
-  package = "@netlify/plugin-nextjs"
