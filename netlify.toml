@@ -1,0 +1,10 @@
+[build]
+  # Set the base directory to where the Next.js app is located
+  base = "frontend"
+  
+  # The command to build the project
+  command = "npm run build"
+
+[[plugins]]
+  # Essential plugin for Next.js on Netlify
+  package = "@netlify/plugin-nextjs"
